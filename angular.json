@@ -121,6 +121,76 @@
           }
         }
       }
+    },
+    "content-lib": {
+      "root": "projects/content-lib",
+      "sourceRoot": "projects/content-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/content-lib/tsconfig.lib.json",
+            "project": "projects/content-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/content-lib/src/test.ts",
+            "tsConfig": "projects/content-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/content-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/content-lib/tsconfig.lib.json",
+              "projects/content-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "process-lib": {
+      "root": "projects/process-lib",
+      "sourceRoot": "projects/process-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/process-lib/tsconfig.lib.json",
+            "project": "projects/process-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/process-lib/src/test.ts",
+            "tsConfig": "projects/process-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/process-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/process-lib/tsconfig.lib.json",
+              "projects/process-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "basic-app"
